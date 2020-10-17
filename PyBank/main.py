@@ -11,29 +11,23 @@ def avg_change(listname):
     # Round to 2 decimals
     return round(avg, 2)
 
-def print_screen():
-    print("Financial Analysis")
-    print("----------------------------")
-    print(f"Total Months: {month_count(month_list)}")
-    print(f"Total: ${sum(amount_list)}")
-    print(f"Average Change: ${avg_change(change_list)}")
-    print(f"Greatest Increase in Profits: {max_month} (${max_change})")
-    print(f"Greatest Decrease in Profits: {min_month} (${min_change})")
-
-def write_file():
+def export_result():
+    result = ("Financial Analysis\n"
+        "----------------------------\n"
+        f"Total Months: {month_count(month_list)}\n"
+        f"Total: ${sum(amount_list)}\n"
+        f"Average Change: ${avg_change(change_list)}\n"
+        f"Greatest Increase in Profits: {max_month} (${max_change})\n"
+        f"Greatest Decrease in Profits: {min_month} (${min_change})")
+    
+    print(result)
+    
     txt_path = os.path.join("PyBank", "Analysis", "Output.txt")
     with open(txt_path, "w") as result_file:
-        result_file.write("Financial Analysis\n")
-        result_file.write("----------------------------\n")
-        result_file.write(f"Total Months: {month_count(month_list)}\n")
-        result_file.write(f"Total: ${sum(amount_list)}\n")
-        result_file.write(f"Average Change: ${avg_change(change_list)}\n")
-        result_file.write(f"Greatest Increase in Profits: {max_month} (${max_change})\n")
-        result_file.write(f"Greatest Decrease in Profits: {min_month} (${min_change})")
+        result_file.write(result)
     
     print("----------------------------")
     print("A result report was generated in " + result_file.name)
-
 
 
 # Path to collect data from the Resources folder
@@ -74,6 +68,5 @@ with open(pybank_csv, "r") as pb_file:
         elif b == min_change:
             min_month = a
     
-    # Print and export result/file
-    print_screen()
-    write_file()
+    # Print and export result
+    export_result()
