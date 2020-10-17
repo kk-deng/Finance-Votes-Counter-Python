@@ -9,5 +9,7 @@ with open(pypoll_csv, "r") as pp_file:
     pp_csv = csv.reader(pp_file)
     next(pp_csv, None)
 
+    # Create a list for all candidates
+    candidate_list = []
     for row in pp_csv:
         
