@@ -24,3 +24,12 @@ Greatest Increase in Profits: Feb-2012 ($1926159)
 Greatest Decrease in Profits: Sep-2013 ($-2196167)
 '''
 
+### Key features
+An enumerate function was used to calculate the difference for monthly amount
+'''python
+# Calculate the change of amount starting the 2nd month
+    for i, amount in enumerate(amount_list):
+        if i > 0:
+            monthly_change = amount_list[i] - amount_list[i-1]
+            change_list.append(monthly_change)
+'''
