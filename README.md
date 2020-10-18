@@ -25,7 +25,7 @@ Greatest Decrease in Profits: Sep-2013 ($-2196167)
 ```
 
 ### Key features
-An enumerate function was used to calculate the difference for monthly amount.
+1. An enumerate function was used to calculate the difference for monthly amount.
 ```python
 for i, amount in enumerate(amount_list):
     if i > 0:
@@ -33,7 +33,7 @@ for i, amount in enumerate(amount_list):
         change_list.append(monthly_change)
 ```
 
-A zipped list was used to get the months of min/max monthly change.
+2. A zipped list was used to get the months of min/max monthly change.
 ```python
 month_change_zipped = zip(month_list[1:], change_list)
 for (a, b) in month_change_zipped:
@@ -43,7 +43,7 @@ for (a, b) in month_change_zipped:
         min_month = a
 ```
 
-Result summary was assigned to one variable to make export/print code concise without showing it twice.
+3. Result summary was assigned to one variable to make export/print code concise without showing it twice.
 ```python
 result = ("Financial Analysis\n"
     "----------------------------\n"
@@ -81,7 +81,7 @@ Winner: Khan
 ```
 
 ### Key features
-To use the dictionary.get method to find out if the dictionary has existing candidate name, if not, add a new one. Otherwise, add the vote number.
+1. To use the dictionary.get method to find out if the dictionary has existing candidate name, if not, add a new one. Otherwise, add the vote number.
 ```python
 for row in pp_csv:
     if vote_list.get(row[2]) == None:
@@ -90,7 +90,7 @@ for row in pp_csv:
         vote_list[row[2]] += 1
 ```
 
-A key/value for loop was used to reiterate the items in the candidate dictionary to write and print the voting result simultaneously.
+2. A key/value for loop was used to reiterate the items in the candidate dictionary to write and print the voting result simultaneously.
 ```python
 for candidate, votes in vote_list.items():
     # ...
