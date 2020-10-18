@@ -27,10 +27,10 @@ Greatest Decrease in Profits: Sep-2013 ($-2196167)
 ### Key features
 An enumerate function was used to calculate the difference for monthly amount.
 ```python
-    for i, amount in enumerate(amount_list):
-        if i > 0:
-            monthly_change = amount_list[i] - amount_list[i-1]
-            change_list.append(monthly_change)
+for i, amount in enumerate(amount_list):
+    if i > 0:
+        monthly_change = amount_list[i] - amount_list[i-1]
+        change_list.append(monthly_change)
 ```
 
 A zipped list was used to get the months of min/max monthly change.
@@ -46,12 +46,12 @@ for (a, b) in month_change_zipped:
 Result summary was assigned to one variable to make export/print code concise without showing it twice.
 ```python
 result = ("Financial Analysis\n"
-        "----------------------------\n"
-        f"Total Months: {len(month_list)}\n"
-        f"Total: ${sum(amount_list)}\n"
-        f"Average Change: ${avg_change(change_list)}\n"
-        f"Greatest Increase in Profits: {max_month} (${max_change})\n"
-        f"Greatest Decrease in Profits: {min_month} (${min_change})")
+    "----------------------------\n"
+    f"Total Months: {len(month_list)}\n"
+    f"Total: ${sum(amount_list)}\n"
+    f"Average Change: ${avg_change(change_list)}\n"
+    f"Greatest Increase in Profits: {max_month} (${max_change})\n"
+    f"Greatest Decrease in Profits: {min_month} (${min_change})")
 ```
 
 
@@ -81,3 +81,27 @@ Winner: Khan
 ```
 
 ### Key features
+To use the dictionary.get method to find out if the dictionary has existing candidate name, if not, add a new one. Otherwise, add the vote number.
+```python
+for row in pp_csv:
+    if vote_list.get(row[2]) == None:
+        vote_list[row[2]] = 1
+    else:
+        vote_list[row[2]] += 1
+```
+
+A key/value for loop was used to reiterate the items in the candidate dictionary to write and print the voting result simultaneously.
+```python
+for candidate, votes in vote_list.items():
+    # ...
+    result2 = (f"{candidate}: {percentage_votes}% ({votes})")
+    # ...
+    if votes == max(vote_list.values()):
+        winner = candidate
+```
+
+# Appreciation
+
+Thank you so much for the help from **Piro** and **Laurel**.
+
+by Kelvin
