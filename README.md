@@ -104,4 +104,4 @@ for candidate, votes in vote_list.items():
 
 Thank you so much for the help from **Piro** and **Laurel**.
 
-by Kelvin
+by Kelvin @ 10.17.2020
