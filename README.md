@@ -2,7 +2,7 @@
 
 *Built by Kelvin Deng*
 
-## Pybank for financial records from a company. 
+## Part 1. Pybank for financial records from a company. 
 
 From the dataset we received, it has two columns: **Date** and **Profit/Losses**.
 This python script analyzes the data and generates a financial report with the following info:
@@ -55,7 +55,7 @@ result = ("Financial Analysis\n"
 ```
 
 
-## PyPoll for automated votes counting
+## Part 2. PyPoll for automated votes counting
 
 A dataset with a large amount of voting data was given. This python script analyzes the **Candidate** name and **numbers of votes** to find out the winner and his percentage. The result includes:
 
