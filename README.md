@@ -25,10 +25,59 @@ Greatest Decrease in Profits: Sep-2013 ($-2196167)
 ```
 
 ### Key features
-An enumerate function was used to calculate the difference for monthly amount
+An enumerate function was used to calculate the difference for monthly amount.
 ```python
     for i, amount in enumerate(amount_list):
         if i > 0:
             monthly_change = amount_list[i] - amount_list[i-1]
             change_list.append(monthly_change)
 ```
+
+A zipped list was used to get the months of min/max monthly change.
+```python
+month_change_zipped = zip(month_list[1:], change_list)
+for (a, b) in month_change_zipped:
+    if b == max_change:
+        max_month = a
+    elif b == min_change:
+        min_month = a
+```
+
+Result summary was assigned to one variable to make export/print code concise without showing it twice.
+```python
+result = ("Financial Analysis\n"
+        "----------------------------\n"
+        f"Total Months: {len(month_list)}\n"
+        f"Total: ${sum(amount_list)}\n"
+        f"Average Change: ${avg_change(change_list)}\n"
+        f"Greatest Increase in Profits: {max_month} (${max_change})\n"
+        f"Greatest Decrease in Profits: {min_month} (${min_change})")
+```
+
+
+## PyPoll for automated votes counting
+
+A dataset with a large amount of voting data was given. This python script analyzes the **Candidate** name and **numbers of votes** to find out the winner and his percentage. The result includes:
+
+- [x] The total number of votes cast
+- [x] A complete list of candidates who received votes
+- [x] The percentage of votes each candidate won
+- [x] The total number of votes each candidate won
+- [x] The winner of the election based on popular vote.
+
+And the final report was printed on the python terminal and a text file in the Analysis folder:
+```
+Election Results
+-------------------------
+Total Votes: 3521001
+-------------------------
+Khan: 63.000% (2218231)
+Correy: 20.000% (704200)
+Li: 14.000% (492940)
+O'Tooley: 3.000% (105630)
+-------------------------
+Winner: Khan
+-------------------------
+```
+
+### Key features
