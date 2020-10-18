@@ -3,10 +3,6 @@ import os
 import csv
 
 # ------------- Definition of functions -------------
-def month_count(listname):
-    # Get the length of a list
-    return len(listname)
-
 def avg_change(listname):
     # Get the mean by calculating sum/len, with round to 2 decimals
     return round((sum(listname)/len(listname)), 2)
@@ -15,7 +11,7 @@ def export_result():
     # Assign the export result summary
     result = ("Financial Analysis\n"
         "----------------------------\n"
-        f"Total Months: {month_count(month_list)}\n"
+        f"Total Months: {len(month_list)}\n"
         f"Total: ${sum(amount_list)}\n"
         f"Average Change: ${avg_change(change_list)}\n"
         f"Greatest Increase in Profits: {max_month} (${max_change})\n"
