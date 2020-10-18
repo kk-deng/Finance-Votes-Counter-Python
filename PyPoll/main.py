@@ -57,8 +57,10 @@ with open(pypoll_csv, "r") as pp_file:
     # Create a dictionary for all candidates, 'Khan': 2218231, 'Correy': 704200, 'Li': 492940, "O'Tooley": 105630
     vote_list = {}
     
+    # Collecting candidate names and votes from csv
     for row in pp_csv:
-        
+        # If there is no candidate name in the dict, created a new key with vote value as 1
+        # Or if there is existing candidate, vote value + 1
         if vote_list.get(row[2]) == None:
             vote_list[row[2]] = 1
         else:
