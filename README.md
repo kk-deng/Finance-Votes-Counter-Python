@@ -14,7 +14,7 @@ This python script analyzes the data and generates a financial report with the f
 - [x] The greatest decrease in losses (date and amount) over the entire period
 
 And the final report was printed on the python terminal and a text file in the Analysis folder:
-'''python
+```
 Financial Analysis
 ----------------------------
 Total Months: 86
@@ -22,13 +22,13 @@ Total: $38382578
 Average Change: $-2315.12
 Greatest Increase in Profits: Feb-2012 ($1926159)
 Greatest Decrease in Profits: Sep-2013 ($-2196167)
-'''
+```
 
 ### Key features
 An enumerate function was used to calculate the difference for monthly amount
-'''python
+```python
     for i, amount in enumerate(amount_list):
         if i > 0:
             monthly_change = amount_list[i] - amount_list[i-1]
             change_list.append(monthly_change)
-'''
+```
